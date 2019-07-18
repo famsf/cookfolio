@@ -252,6 +252,33 @@
      }
    });
    
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-10',
+     clickHandler: function(e) {
+       var myoverlay9 = viewer.getOverlayById('overlay-10');
+       viewer.viewport.fitBounds(myoverlay9.getBounds());
+       document.getElementById('overlay-10').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-11',
+     clickHandler: function(e) {
+       var myoverlay10 = viewer.getOverlayById('overlay-11');
+       viewer.viewport.fitBounds(myoverlay10.getBounds());
+       document.getElementById('overlay-11').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-12',
+     clickHandler: function(e) {
+       var myoverlay11 = viewer.getOverlayById('overlay-12');
+       viewer.viewport.fitBounds(myoverlay11.getBounds());
+       document.getElementById('overlay-12').style.display = "none";
+     }
+   });
+   
    
    
    viewer.addHandler('canvas-double-click', function() {
