@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cook Folio Chart</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div id="foliozoom"></div>
+    <div class="toolbarContainer"></div>
+    <script src="../lib/openseadragon/openseadragon.min.js"></script>
+    <script type="text/javascript">
+      var viewer = OpenSeadragon({
+        id: "foliozoom",
+        prefixUrl: "../lib/openseadragon/images/",
+        tileSources: [
+          "../../dzi/chart/dzc_output.xml"
+        ],
+        visibilityRatio: 0.6,
+        showFullPageControl: false,
+        constrainDuringPan: true,
+        viewportMargins: {
+          top: 64,
+          left: 64,
+          right: 64,
+          bottom: 64
+        }           
+      });
+    </script>
+    <!--<script src="js/cookfolio.js"></script>-->
+  </body>
+</html>

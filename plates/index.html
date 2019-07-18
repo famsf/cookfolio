@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cook Folio Interactive</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../lib/fontawesome/css/all.css"
+    <link rel="stylesheet" href="https://use.typekit.net/tpb7nan.css">
+  </head>
+  <body>
+    <div id="foliozoom"></div>
+    <div id="overlay-1"></div>
+    <div id="overlay-2"></div>
+    <div id="overlay-3"></div>
+    <div id="overlay-4"></div>
+    <div id="overlay-5"></div>
+    <div id="overlay-6"></div>
+    <div id="overlay-7"></div>
+    <div id="overlay-8"></div>
+    <div id="overlay-9"></div>
+    <div id="overlay-10"></div>
+    <div id="overlay-11"></div>
+    <div id="overlay-12"></div>
+
+    <div id="toolBar">
+      <div id="home" class="controlButton"><i class="fas fa-home"></i></div>
+      <div id="info" class="controlButton"><i class="fas fa-question-circle"></i></div>
+    </div>
+    <div id="infoModal" class="modal">
+      <div class="modalContent">
+        <span class="closeButton"><i class="fas fa-times-circle"></i></span>
+        <p>Pinch to zoom and drag to pan.</p>
+      </div>     
+    </div>
+    
+    <script src="../lib/openseadragon/openseadragon.min.js"></script>
+    <script src="../js/modal.js"></script>
+    <script type="text/javascript">
+      var viewer = OpenSeadragon({
+        id: "foliozoom",
+        prefixUrl: "../lib/openseadragon/images/",
+        tileSources: [
+          "../../dzi/reception/dzc_output.xml",
+          "../../dzi/night-dance/dzc_output.xml",
+          "../../dzi/night-dance-1/dzc_output.xml",
+          "../../dzi/kava-king/dzc_output.xml",
+          "../../dzi/sacrifice/dzc_output.xml",
+          "../../dzi/otaheite-dance/dzc_output.xml",
+          "../../dzi/offering/dzc_output.xml",
+          "../../dzi/presents/dzc_output.xml",
+          "../../dzi/dancing-man/dzc_output.xml",
+          "../../dzi/young-woman/dzc_output.xml",
+          "../../dzi/helmet/dzc_output.xml",
+          "../../dzi/canoe/dzc_output.xml"
+        ],
+        overlays: [
+          {
+            id: 'overlay-1',
+            x: 0,
+            y: 82,
+            width: 512,
+            height: 350,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-2',
+            x: 575,
+            y: 82,
+            width: 512,
+            height: 350,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-3',
+            x: 1151,
+            y: 82,
+            width: 512,
+            height: 350,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-4',
+            x: 1727,
+            y: 86,
+            width: 512,
+            height: 342,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-5',
+            x: 0,
+            y: 680,
+            width: 512,
+            height: 308,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-6',
+            x: 575,
+            y: 664,
+            width: 512,
+            height: 340,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-7',
+            x: 1151,
+            y: 667,
+            width: 512,
+            height: 334,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-8',
+            x: 1727,
+            y: 665,
+            width: 512,
+            height: 338,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-9',
+            x: 74,
+            y: 1152,
+            width: 362,
+            height: 512,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-10',
+            x: 632,
+            y: 1152,
+            width: 405,
+            height: 512,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-11',
+            x: 1202,
+            y: 1152,
+            width: 410,
+            height: 512,
+            className: 'overlay'
+          },
+          {
+            id: 'overlay-12',
+            x: 1730,
+            y: 1241,
+            width: 512,
+            height: 333,
+            className: 'overlay'
+          }
+        ],
+        collectionMode: true,
+        collectionRows: 3,
+        collectionTileSize: 512,
+        collectionTileMargin: 64,
+        toolbar: "toolBar",
+        autoHideControls: false,
+        showZoomControl: false,
+        homeButton: "home",
+        showFullPageControl: false,
+        visibilityRatio: 0.5,
+        constrainDuringPan: true,
+        zoomPerClick: 1,
+        viewportMargins: {
+          top: 72,
+          left: 80,
+          right: 80,
+          bottom: 72
+        },        
+      });
+      
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-1',
+     clickHandler: function(e) {
+       var myoverlay = viewer.getOverlayById('overlay-1');
+       viewer.viewport.fitBounds(myoverlay.getBounds());
+       document.getElementById('overlay-1').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-2',
+     clickHandler: function(e) {
+       var myoverlay1 = viewer.getOverlayById('overlay-2');
+       viewer.viewport.fitBounds(myoverlay1.getBounds());
+       document.getElementById('overlay-2').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-3',
+     clickHandler: function(e) {
+       var myoverlay2 = viewer.getOverlayById('overlay-3');
+       viewer.viewport.fitBounds(myoverlay2.getBounds());
+       document.getElementById('overlay-3').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-4',
+     clickHandler: function(e) {
+       var myoverlay3 = viewer.getOverlayById('overlay-4');
+       viewer.viewport.fitBounds(myoverlay3.getBounds());
+       document.getElementById('overlay-4').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-5',
+     clickHandler: function(e) {
+       var myoverlay4 = viewer.getOverlayById('overlay-5');
+       viewer.viewport.fitBounds(myoverlay4.getBounds());
+       document.getElementById('overlay-5').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-6',
+     clickHandler: function(e) {
+       var myoverlay5 = viewer.getOverlayById('overlay-6');
+       viewer.viewport.fitBounds(myoverlay5.getBounds());
+       document.getElementById('overlay-6').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-7',
+     clickHandler: function(e) {
+       var myoverlay6 = viewer.getOverlayById('overlay-7');
+       viewer.viewport.fitBounds(myoverlay6.getBounds());
+       document.getElementById('overlay-7').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-8',
+     clickHandler: function(e) {
+       var myoverlay7 = viewer.getOverlayById('overlay-8');
+       viewer.viewport.fitBounds(myoverlay7.getBounds());
+       document.getElementById('overlay-8').style.display = "none";
+     }
+   });
+   
+   new OpenSeadragon.MouseTracker({
+     element:'overlay-9',
+     clickHandler: function(e) {
+       var myoverlay8 = viewer.getOverlayById('overlay-9');
+       viewer.viewport.fitBounds(myoverlay8.getBounds());
+       document.getElementById('overlay-9').style.display = "none";
+     }
+   });
+   
+   
+   
+   viewer.addHandler('canvas-double-click', function() {
+     event.preventDefaultAction = true;
+     viewer.viewport.goHome();
+   });
+     
+   viewer.addHandler('home', function() { 
+     setTimeout(function() {
+       for (var ii = 1; ii < 13; ii++) {
+         document.getElementById('overlay-'+ii).style.display = "block";
+       }
+     }, 500);
+   });
+   
+   viewer.addHandler('canvas-exit', function() {
+     setTimeout(function() {
+       viewer.viewport.goHome();
+     }, 30000);
+   });
+   
+   // Can this be on scroll out only? Check this out on OSD docs
+   
+//   viewer.addHandler('canvas-scroll', function() {
+//     setTimeout(function() {
+//       for (var ii = 1; ii < 13; ii++) {
+//       document.getElementById('overlay-'+ii).style.display = "block";
+//       }
+//     }, 500);
+//   });
+   
+//   viewer.addHandler('canvas-drag', function() {
+//     setTimeout(function() {
+//       for (var ii = 1; ii < 13; ii++) {
+//       document.getElementById('overlay-'+ii).style.display = "none";
+//       }
+//     }, 0);
+//   });
+
+
+    </script>
+    <!--<script src="js/cookfolio.js"></script>-->
+  </body>
+</html>
