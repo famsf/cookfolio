@@ -6,6 +6,9 @@ body {
   font-family: "akzidenz-grotesk-next-pro", sans-serif;
   font-weight: 300; }
 
+.openseadragon-canvas {
+  outline: none; }
+
 #foliozoom {
   width: 100vw;
   height: 100vh;
