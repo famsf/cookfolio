@@ -257,11 +257,25 @@
      }, 500);
    });
    
-   viewer.addHandler('canvas-exit', function() {
-     setTimeout(function() {
-       viewer.viewport.goHome();
-     }, 60000);
-   });
+ function idleLogout() {
+   var t;
+   window.onload = resetTimer;
+   window.onmousemove = resetTimer;
+   window.onmousedown = resetTimer; // catches touchscreen presses
+   window.onclick = resetTimer;     // catches touchpad clicks
+   window.onscroll = resetTimer;    // catches scrolling with arrow keys
+   window.onkeypress = resetTimer;
+
+   function logout() {
+     viewer.viewport.goHome();
+   }
+
+   function resetTimer() {
+     clearTimeout(t);
+     t = setTimeout(logout, 30000);  // time is in milliseconds
+   }
+}
+idleLogout();
    
    // Can this be on scroll out only? Check this out on OSD docs
    
