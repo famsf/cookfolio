@@ -240,13 +240,13 @@
        viewer.viewport.fitBounds(myoverlay11.getBounds());
        document.getElementById('overlay-12').style.display = "none";
      }
-   });
-   
+   }); 
    
    
    viewer.addHandler('canvas-double-click', function() {
      event.preventDefaultAction = true;
      viewer.viewport.goHome();
+     viewer.viewport.panTo(center);
    });
      
    viewer.addHandler('home', function() { 
